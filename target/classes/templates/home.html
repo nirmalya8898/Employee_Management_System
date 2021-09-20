@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+	th:replace="base::layout(~{::section})">
+<head>
+<meta charset="ISO-8859-1">
+<title>EmployeeManagementSystem</title>
+</head>
+<body>
+	<section
+		class="container d-flex justify-content-center align-items-center"
+		style="margin-top: 50px;">
+		<div class="card" style="width: 40rem;">
+			<div class="card-body" style="background-color:#e6ffff">
+				<h1 class="card-title">Employee Management System</h1>
+				<p class="card-text">Start collecting your employee.we provide very efficient way
+				to handling contacts.</p>
+				<a th:href="@{/signin}" class="card-link btn btn-primary">Login</a> <a th:href="@{/signup}"
+					class="card-link btn btn-primary">Signup</a>
+			</div>
+		</div>
+	</section>
+</body>
+</html>
