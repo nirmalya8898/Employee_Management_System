@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+	th:replace="base::layout(~{::section})">
+<head>
+<meta charset="ISO-8859-1">
+<title>Employee Management Form - signup</title>
+</head>
+<body>
+	<section>
+		<div class="container">
+			<div class="row">
+				<div class="col-md-8 offset-md-2">
+					<div class="my-card mt-3">
+
+						<div th:if="${session.message}"
+							th:classappend="${session.message.type}"
+							class="alert text-center" role="alert">
+							<p th:text="${session.message.content}"></p>
+
+							<th:block th:text="${#session.removeAttribute('message')}"></th:block>
+						</div>
+						<h1 class="text-center">Register Here!!</h1>
+						<form action="" th:action="@{/signup}" method="post"
+							th:object="${manager}">
+
+							<div class="mb-3">
+								<label for="name-field" class="form-label">Name</label> <input
+									type="text" class="form-control" id="name-field"
+									aria-describedby="emailHelp" placeholder="Enter Name"
+									required="required" th:value="${manager.managerName}" name="managerName" />
+							</div>
+
+							<div class="mb-3">
+								<label for="email-field" class="form-label">Email</label> <input
+									type="email" class="form-control" id="email-field"
+									aria-describedby="emailHelp" placeholder="Enter email"
+									required="required" th:value="${manager.managerEmail}" name="managerEmail" />
+							</div>
+
+							<div class="mb-3">
+								<label for="name-field" class="form-label">Password</label> <input
+									type="password" class="form-control" id="password-field"
+									aria-describedby="emailHelp" placeholder="Enter Password"
+									required="required" th:value="${manager.managerPassword}" name="managerPassword" />
+							</div>
+							<div class="container mb-3 text-center">
+								<button type="submit"
+									class="btn bg-primary btn-block text-white">Submit</button>
+							</div>
+						</form>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+</body>
+</html>
